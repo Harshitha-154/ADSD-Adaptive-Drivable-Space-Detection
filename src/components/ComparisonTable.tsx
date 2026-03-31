@@ -1,7 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check, X, Minus, Sparkles, Trophy, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
-import { playClickSound, playSuccessChime } from "@/lib/sound";
 
 const features = [
   "Drivable Space Segmentation",
@@ -72,7 +71,6 @@ const CellIcon = ({ value, isADSD, revealed }: { value: boolean | string; isADSD
 
 const ComparisonTable = () => {
   const [revealedRows, setRevealedRows] = useState<number[]>([]);
-  const [showWinner, setShowWinner] = useState(false);
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
   useEffect(() => {
@@ -82,13 +80,8 @@ const ComparisonTable = () => {
           features.forEach((_, i) => {
             setTimeout(() => {
               setRevealedRows((prev) => [...prev, i]);
-              playClickSound();
             }, i * 200);
           });
-          setTimeout(() => {
-            setShowWinner(true);
-            playSuccessChime();
-          }, features.length * 200 + 500);
         }
       },
       { threshold: 0.3 }
@@ -220,35 +213,6 @@ const ComparisonTable = () => {
           </table>
         </motion.div>
 
-        {/* Winner banner */}
-        <AnimatePresence>
-          {showWinner && (
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              className="mt-8 mx-auto max-w-lg text-center"
-            >
-              <motion.div
-                className="inline-flex items-center gap-3 bg-primary/10 border border-primary/40 rounded-2xl px-8 py-4"
-                animate={{
-                  boxShadow: [
-                    "0 0 20px hsl(190 100% 50%/0.1), 0 0 60px hsl(190 100% 50%/0.05)",
-                    "0 0 40px hsl(190 100% 50%/0.3), 0 0 80px hsl(190 100% 50%/0.1)",
-                    "0 0 20px hsl(190 100% 50%/0.1), 0 0 60px hsl(190 100% 50%/0.05)",
-                  ],
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                <motion.div animate={{ rotate: [0, 15, -15, 0] }} transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}>
-                  <Trophy className="w-6 h-6 text-warning" />
-                </motion.div>
-                <span className="font-heading text-lg font-bold text-primary">
-                  ADSD: 10/10 Features — <span className="text-success">Industry Leading</span>
-                </span>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );
