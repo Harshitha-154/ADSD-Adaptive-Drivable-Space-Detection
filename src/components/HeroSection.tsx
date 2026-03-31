@@ -21,11 +21,10 @@ const HeroSection = () => {
           alt=""
           className="w-full h-full object-cover"
           initial={{ scale: 1.2, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.35 }}
+          animate={{ scale: 1, opacity: 0.2 }}
           transition={{ duration: 2, ease: "easeOut" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
       </div>
 
       {/* Particle field */}
