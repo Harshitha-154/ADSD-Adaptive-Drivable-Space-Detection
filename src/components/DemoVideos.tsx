@@ -30,7 +30,7 @@ const demos = [
     duration: "4:15",
     tag: "Stress Test",
     tagColor: "bg-warning text-warning-foreground",
-    video: "/videos/feature-confidence-zones.mp4",
+    video: "/videos/night-weather-testing.mp4",
     borderGlow: "hover:shadow-[0_0_30px_hsl(45_100%_55%/0.15)]",
   },
 ];
