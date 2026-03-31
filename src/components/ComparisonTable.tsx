@@ -80,13 +80,8 @@ const ComparisonTable = () => {
           features.forEach((_, i) => {
             setTimeout(() => {
               setRevealedRows((prev) => [...prev, i]);
-              playClickSound();
             }, i * 200);
           });
-          setTimeout(() => {
-            setShowWinner(true);
-            playSuccessChime();
-          }, features.length * 200 + 500);
         }
       },
       { threshold: 0.3 }
