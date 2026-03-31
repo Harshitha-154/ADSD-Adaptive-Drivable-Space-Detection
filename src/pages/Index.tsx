@@ -10,22 +10,28 @@ import UseCases from "@/components/UseCases";
 import ComparisonTable from "@/components/ComparisonTable";
 import DecisionEngine from "@/components/DecisionEngine";
 import Footer from "@/components/Footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
+import FloatingSymbols from "@/components/FloatingSymbols";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <FeaturesGrid />
-      <HowItWorks />
-      <SystemOverview />
-      <DemoVideos />
-      <TechStack />
-      <PerformanceMetrics />
-      <UseCases />
-      <ComparisonTable />
-      <DecisionEngine />
-      <Footer />
+    <div className="min-h-screen relative">
+      <AnimatedBackground />
+      <FloatingSymbols />
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <FeaturesGrid />
+        <HowItWorks />
+        <SystemOverview />
+        <DemoVideos />
+        <TechStack />
+        <PerformanceMetrics />
+        <UseCases />
+        <ComparisonTable />
+        <DecisionEngine />
+        <Footer />
+      </div>
     </div>
   );
 };
