@@ -178,6 +178,18 @@ const DemoVideos = () => {
                   <h3 className="font-heading text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{demo.title}</h3>
                   <p className="text-sm text-muted-foreground">{demo.desc}</p>
                   <div className="h-px bg-gradient-to-r from-primary/30 via-accent/20 to-transparent mt-4" />
+                  <motion.button
+                    whileHover={{ x: 4 }}
+                    className="mt-3 flex items-center gap-2 text-xs font-display tracking-wider text-primary hover:text-accent transition-colors"
+                    onClick={() => playClickSound()}
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    CLICK TO VIEW MORE
+                    <motion.span
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >→</motion.span>
+                  </motion.button>
                 </div>
               </motion.div>
             );
