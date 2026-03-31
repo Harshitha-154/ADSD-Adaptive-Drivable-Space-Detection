@@ -1,7 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check, X, Minus, Sparkles, Trophy, Zap } from "lucide-react";
 import { useState, useEffect } from "react";
-import { playClickSound, playSuccessChime } from "@/lib/sound";
 
 const features = [
   "Drivable Space Segmentation",
