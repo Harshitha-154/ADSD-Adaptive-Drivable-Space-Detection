@@ -254,12 +254,9 @@ const FeaturesGrid = () => {
                     className="p-5"
                     onClick={() => { playClickSound(); setSelectedFeature(feature.title); }}
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                        {feature.title}
-                      </h3>
-                      <Eye className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
+                    <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300 mb-2">
+                      {feature.title}
+                    </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
 
                     {/* Animated underline */}
@@ -270,6 +267,19 @@ const FeaturesGrid = () => {
                       viewport={{ once: true }}
                       transition={{ delay: 0.5 + index * 0.1, duration: 0.8 }}
                     />
+
+                    {/* Click to view more */}
+                    <motion.div
+                      whileHover={{ x: 4 }}
+                      className="mt-3 flex items-center gap-2 text-xs font-display tracking-wider text-primary hover:text-accent transition-colors cursor-pointer"
+                    >
+                      <Eye className="w-3.5 h-3.5" />
+                      CLICK TO VIEW MORE
+                      <motion.span
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >→</motion.span>
+                    </motion.div>
                   </div>
                 </motion.div>
               );

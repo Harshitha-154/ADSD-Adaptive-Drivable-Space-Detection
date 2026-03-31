@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-import { Play, Pause, Volume2, VolumeX, Sparkles } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Eye } from "lucide-react";
 import { playVideoStartSound, playVideoStopSound, playClickSound } from "@/lib/sound";
 import bgTechHud from "@/assets/bg-tech-hud.jpg";
 import ParticleField from "./ParticleField";
@@ -30,7 +30,7 @@ const demos = [
     duration: "4:15",
     tag: "Stress Test",
     tagColor: "bg-warning text-warning-foreground",
-    video: "/videos/feature-confidence-zones.mp4",
+    video: "/videos/night-weather-testing.mp4",
     borderGlow: "hover:shadow-[0_0_30px_hsl(45_100%_55%/0.15)]",
   },
 ];
@@ -178,6 +178,18 @@ const DemoVideos = () => {
                   <h3 className="font-heading text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{demo.title}</h3>
                   <p className="text-sm text-muted-foreground">{demo.desc}</p>
                   <div className="h-px bg-gradient-to-r from-primary/30 via-accent/20 to-transparent mt-4" />
+                  <motion.button
+                    whileHover={{ x: 4 }}
+                    className="mt-3 flex items-center gap-2 text-xs font-display tracking-wider text-primary hover:text-accent transition-colors"
+                    onClick={() => playClickSound()}
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    CLICK TO VIEW MORE
+                    <motion.span
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >→</motion.span>
+                  </motion.button>
                 </div>
               </motion.div>
             );
