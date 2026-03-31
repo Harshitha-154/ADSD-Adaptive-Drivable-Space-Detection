@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-import { Play, Pause, Volume2, VolumeX, Sparkles } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Eye } from "lucide-react";
 import { playVideoStartSound, playVideoStopSound, playClickSound } from "@/lib/sound";
 import bgTechHud from "@/assets/bg-tech-hud.jpg";
 import ParticleField from "./ParticleField";
