@@ -71,7 +71,6 @@ const CellIcon = ({ value, isADSD, revealed }: { value: boolean | string; isADSD
 
 const ComparisonTable = () => {
   const [revealedRows, setRevealedRows] = useState<number[]>([]);
-  const [showWinner, setShowWinner] = useState(false);
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
   useEffect(() => {
