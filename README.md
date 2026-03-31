@@ -12,7 +12,7 @@
 
 ---
 
-## ✨ Typing Animation
+
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=700&lines=Adaptive+Drivable+Space+Detection;AI+for+Smart+Mobility;Real-Time+Road+Understanding;Built+with+Computer+Vision+🚀" alt="Typing SVG" />
